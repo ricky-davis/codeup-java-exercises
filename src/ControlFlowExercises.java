@@ -1,10 +1,16 @@
+import java.util.Scanner;
 public class ControlFlowExercises {
     public static void main(String[] args) {
-        for(int i=1;i<=100;i++){
-            String buffer="";
-            if(i%3==0)buffer+="Fizz";
-            if(i%5==0)buffer+="Buzz";
-            System.out.println(buffer==""?i:buffer);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter any number > 10");
+        int input = sc.nextInt();
+        String buffer =
+                "| number | squared | cubed |\n" +
+                "| ------ | ------- | ----- |\n";
+        String leftAlignFormat = "| %-6d | %-7d | %-5d |%n";
+        for(int i=0;i<=input;i++){
+            buffer+=String.format(leftAlignFormat, i, i*i,i*i*i);
         }
+        System.out.println(buffer);
     }
 }
