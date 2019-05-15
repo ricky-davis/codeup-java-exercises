@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 public class MethodsExercises {
     public static void main(String[] args) {
         System.out.println(Multiplication(5,6));
@@ -7,12 +8,26 @@ public class MethodsExercises {
         System.out.println(userInput);
 
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in).useDelimiter("\n");
         System.out.print("Are you sure you want to continue?");
         String response = sc.nextLine();
         if (response.equals("yes")){
             System.out.println(userInput +"! = " + factorial(userInput));
         }
+        do{
+            System.out.println("Would you like to roll the dice?");
+            response = sc.next();
+            if(response.equals("yes")) {
+                System.out.println("How many?");
+                int dieCount = sc.nextInt();
+                System.out.println("Enter the number of sides on your dice: ");
+                int sidesOfDie = sc.nextInt();
+                int diceRoll[] = rollDice(dieCount, sidesOfDie);
+                for (int i=0;i<diceRoll.length;i++){
+                    System.out.println("Dice #"+(i+1)+" rolled a " +diceRoll[i]+".");
+                }
+        }
+        }while(response.equals("yes"));
 
     }
     private static void Addition(long a, long b){
@@ -43,5 +58,14 @@ public class MethodsExercises {
         if (x == 0)
             return 1;
         return x*factorial(--x);
+    }
+
+    private static int[] rollDice(int dieCount, int sides){
+        int dieResults[] = new int[dieCount];
+        Random rand = new Random();
+        for(int i=0;i<dieCount;i++){
+            dieResults[i]=rand.nextInt(sides)+1;
+        }
+        return dieResults;
     }
 }
