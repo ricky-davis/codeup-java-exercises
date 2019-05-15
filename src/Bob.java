@@ -9,9 +9,9 @@ public class Bob {
 
             if(input.equals("")){
                 System.out.println("Bob: Fine. Be that way!");
-            }else if(input.substring(input.length()-1).equals("?")){
+            }else if(input.endsWith("?")){
                 System.out.println("Bob: Sure.");
-            }else if(input.substring(input.length()-1).equals("!")){
+            }else if(input.endsWith("!")){
                 System.out.println("Bob: Whoa, chill out!");
             }else if (input.equals("quit")){
                 break;
