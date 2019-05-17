@@ -15,21 +15,23 @@ public class HighLow {
         String userResponse;
         System.out.println("Would you like to guess my number?");
         userResponse = sc.next();
-        boolean found=false;
-        int usrGuesses=0;
-        while(!found){
-            System.out.println("What number am I thinking of?");
-            int userGuess = sc.nextInt();
-            usrGuesses++;
-            if(userGuess<myNum){
-                System.out.println("HIGHER!");
-            }
-            if(userGuess>myNum){
-                System.out.println("LOWER!");
-            }
-            if(userGuess==myNum){
-                System.out.println("GOOD GUESS!! You got it after "+usrGuesses+" guesses!");
-                found=true;
+        if(userResponse.equals("yes")) {
+            boolean found = false;
+            int usrGuesses = 0;
+            while (!found) {
+                System.out.println("What number am I thinking of?");
+                int userGuess = sc.nextInt();
+                usrGuesses++;
+                if (userGuess < myNum) {
+                    System.out.println("HIGHER!");
+                }
+                if (userGuess > myNum) {
+                    System.out.println("LOWER!");
+                }
+                if (userGuess == myNum) {
+                    System.out.println("GOOD GUESS!! You got it after " + usrGuesses + " guesses!");
+                    found = true;
+                }
             }
         }
     }
