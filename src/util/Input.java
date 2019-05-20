@@ -8,7 +8,6 @@ public class Input {
         this.scanner = new Scanner(System.in).useDelimiter("\n");
     }
     public String getString(){
-        System.out.println("Enter a string:");
         return this.scanner.next();
     }
     public boolean yesNo(){
@@ -32,7 +31,6 @@ public class Input {
         return input;
     }
     public int getInt(){
-        System.out.println("Please enter an int.");
         return this.scanner.nextInt();
     }
     public double getDouble(double min, double max){
