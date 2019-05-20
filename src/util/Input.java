@@ -15,7 +15,7 @@ public class Input {
         System.out.println("(yes/no)");
         String input = this.scanner.next();
         input = input.toLowerCase();
-        return input.equals("y") || input.equals("yes") ||input.equals("yes");
+        return input.equals("y") || input.equals("ye") ||input.equals("yes");
     }
     public int getInt(int min, int max){
         System.out.println("Please enter a value "+min+" >= x <= "+max+"!");
@@ -54,3 +54,5 @@ public class Input {
         return this.scanner.nextDouble();
     }
 }
+
+
